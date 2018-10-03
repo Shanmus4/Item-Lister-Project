@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Photo Gallery</title>
+    <title>Notes</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./assets/gallery.png" />
@@ -13,11 +13,11 @@
 
 </head>
 <body>
-    <header id="main-header" class="bg-success text-white p-4 mb-3">
+    <header id="main-header" class="text-white p-4 mb-3">
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-                <h1 id="header-title">Item Lister</h1>
+                <h1 id="header-title">Notes Lister</h1>
             </div>
             <div class="col-md-6 align-self-center">
                 <input type="text" class="form-control" id="filter" placeholder="Search Items...">
@@ -25,17 +25,19 @@
           </div>
         </div>
       </header>
+        
+      <br>
       <div class="container">
        <div id="main" class="card card-body">
-        <h2 class="title">Add Items</h2>
-        <form id="addForm" class="form-inline mb-3">
-          <input type="text" class="form-control mr-2" id="item">
-          <input type="submit" class="btn btn-dark" value="Submit">
+        <h2 class="title">Add Notes</h2>
+        <form action="./php/add.php" id="addForm" class="form-inline mb-3" method="post" >
+          <input type="text" class="form-control mr-2" id="item" name="note">
+          <input type="submit" class="btn btn-dark" value="Submit" name="add">
         </form>
-        <h2 class="title">Items</h2>
+        <br>
+        <h2 class="title">Notes</h2>
         <ul id="items" class="list-group">
-          <li class="list-group-item">My Note <button class="btn btn-danger btn-sm float-right delete">X</button></li>
-          
+           <?php include './php/print.php' ?>
         </ul>
        </div>
       </div>
